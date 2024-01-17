@@ -17,7 +17,8 @@
 }
 
 body {
-  background: url(../../public/images/christmas-1.png), lightgray 50% / cover no-repeat;
+  background: url(../../public/images/christmas-1.png), lightgray;
+  background-size: cover;
 
   position: relative;
 }
