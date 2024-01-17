@@ -1,0 +1,154 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "user123",
+      "wishlists": [
+        {
+          "id": 101,
+          "title": "День рождения",
+          "gifts": [
+            {
+              "id": 1001,
+              "name": "Новый смартфон",
+              "description": "Подарите мне новый смартфон, например, iPhone 13 Pro.",
+              "link": "https://example.com/iphone13",
+              "photos": [
+                "https://example.com/iphone_photo1.jpg",
+                "https://example.com/iphone_photo2.jpg"
+              ]
+            },
+            {
+              "id": 1002,
+              "name": "Наушники Sony WH-1000XM4",
+              "description": "Я хотел бы получить наушники, такие как Sony WH-1000XM4. Эти наушники обеспечат отличное качество звука и комфорт при использовании. Ссылка для сравнения: https://example.com/sony-headphones",
+              "link": "https://example.com/sony-headphones",
+              "photos": [
+                "https://example.com/headphones_photo1.jpg",
+                "https://example.com/headphones_photo2.jpg"
+              ]
+            },
+            {
+              "id": 1003,
+              "name": "Умные часы",
+              "description": "Хочу умные часы с функцией отслеживания активности.",
+              "link": "https://example.com/smartwatch",
+              "photos": [
+                "https://example.com/smartwatch_photo1.jpg",
+                "https://example.com/smartwatch_photo2.jpg"
+              ]
+            },
+            {
+              "id": 1004,
+              "name": "Подписка на стриминговый сервис",
+              "description": "Было бы замечательно получить подписку на мой любимый стриминговый сервис.",
+              "link": "https://example.com/streaming-service",
+              "photos": [
+                "https://example.com/streaming_photo1.jpg",
+                "https://example.com/streaming_photo2.jpg"
+              ]
+            }
+          ]
+        },
+        {
+          "id": 102,
+          "title": "Новый год",
+          "gifts": [
+            {
+              "id": 1005,
+              "name": "Путешествие в Париж",
+              "description": "Мечтаю о путешествии! Пожалуйста, подарите мне тур в Париж.",
+              "link": "https://example.com/paris-trip",
+              "photos": [
+                "https://example.com/paris_photo1.jpg",
+                "https://example.com/paris_photo2.jpg"
+              ]
+            },
+            {
+              "id": 1006,
+              "name": "Набор книг по программированию",
+              "description": "Люблю читать! Было бы замечательно получить набор книг по программированию. Ссылка для сравнения: https://example.com/programming-books",
+              "link": "https://example.com/programming-books",
+              "photos": [
+                "https://example.com/books_photo1.jpg",
+                "https://example.com/books_photo2.jpg"
+              ]
+            },
+            {
+              "id": 1007,
+              "name": "Фитнес-браслет",
+              "description": "Хочу фитнес-браслет для отслеживания физической активности.",
+              "link": "https://example.com/fitness-tracker",
+              "photos": [
+                "https://example.com/fitness_photo1.jpg",
+                "https://example.com/fitness_photo2.jpg"
+              ]
+            },
+            {
+              "id": 1008,
+              "name": "Стол для рисования",
+              "description": "Хотел бы получить стол для создания художественных произведений.",
+              "link": "https://example.com/drawing-desk",
+              "photos": [
+                "https://example.com/desk_photo1.jpg",
+                "https://example.com/desk_photo2.jpg"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "username": "another_user",
+      "wishlists": [
+        {
+          "id": 201,
+          "title": "Свадьба",
+          "gifts": [
+            {
+              "id": 1009,
+              "name": "Фотокамера Canon EOS R5",
+              "description": "Мы мечтаем о красивых фотографиях на свадьбе! Подарите нам профессиональную фотокамеру, например, Canon EOS R5. Ссылка для сравнения: https://example.com/canon-camera",
+              "link": "https://example.com/canon-camera",
+              "photos": [
+                "https://example.com/camera_photo1.jpg",
+                "https://example.com/camera_photo2.jpg"
+              ]
+            },
+            {
+              "id": 1010,
+              "name": "Красивый набор посуды Le Creuset",
+              "description": "Хотели бы получить красивый набор посуды Le Creuset. Это будет прекрасным дополнением к нашему дому. Ссылка для сравнения: https://example.com/le-creuset",
+              "link": "https://example.com/le-creuset",
+              "photos": [
+                "https://example.com/dishware_photo1.jpg",
+                "https://example.com/dishware_photo2.jpg"
+              ]
+            },
+            {
+              "id": 1011,
+              "name": "Робот-пылесос",
+              "description": "Было бы здорово иметь робота-пылесоса для уборки в доме.",
+              "link": "https://example.com/robot-vacuum",
+              "photos": [
+                "https://example.com/robot_photo1.jpg",
+                "https://example.com/robot_photo2.jpg"
+              ]
+            },
+            {
+              "id": 1012,
+              "name": "Подписка на глянцевый журнал",
+              "description": "Хотим получить подписку на стильный глянцевый журнал.",
+              "link": "https://example.com/fashion-magazine",
+              "photos": [
+                "https://example.com/magazine_photo1.jpg",
+                "https://example.com/magazine_photo2.jpg"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
