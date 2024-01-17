@@ -5,6 +5,52 @@
       "username": "user123",
       "wishlists": [
         {
+          "id": 201,
+          "title": "Свадьба",
+          "gifts": [
+            {
+              "id": 1009,
+              "name": "Фотокамера Canon EOS R5",
+              "description": "Мы мечтаем о красивых фотографиях на свадьбе! Подарите нам профессиональную фотокамеру, например, Canon EOS R5. Ссылка для сравнения: https://example.com/canon-camera",
+              "link": "https://example.com/canon-camera",
+              "photos": [
+                "https://example.com/camera_photo1.jpg",
+                "https://example.com/camera_photo2.jpg"
+              ]
+            },
+            {
+              "id": 1010,
+              "name": "Красивый набор посуды Le Creuset",
+              "description": "Хотели бы получить красивый набор посуды Le Creuset. Это будет прекрасным дополнением к нашему дому. Ссылка для сравнения: https://example.com/le-creuset",
+              "link": "https://example.com/le-creuset",
+              "photos": [
+                "https://example.com/dishware_photo1.jpg",
+                "https://example.com/dishware_photo2.jpg"
+              ]
+            },
+            {
+              "id": 1011,
+              "name": "Робот-пылесос",
+              "description": "Было бы здорово иметь робота-пылесоса для уборки в доме.",
+              "link": "https://example.com/robot-vacuum",
+              "photos": [
+                "https://example.com/robot_photo1.jpg",
+                "https://example.com/robot_photo2.jpg"
+              ]
+            },
+            {
+              "id": 1012,
+              "name": "Подписка на глянцевый журнал",
+              "description": "Хотим получить подписку на стильный глянцевый журнал.",
+              "link": "https://example.com/fashion-magazine",
+              "photos": [
+                "https://example.com/magazine_photo1.jpg",
+                "https://example.com/magazine_photo2.jpg"
+              ]
+            }
+          ]
+        },
+        {
           "id": 101,
           "title": "День рождения",
           "gifts": [
