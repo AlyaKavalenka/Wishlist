@@ -1,23 +1,23 @@
 interface Gift {
-  id: number,
-  name: string,
-  description: string,
-  link: string,
-  photos: string[]
+  id: number;
+  name: string;
+  description: string;
+  link: string;
+  photos: string[];
 }
 
 interface Wishlist {
-  id: number,
-  title: string,
-  gifts: Gift[]
+  id: number;
+  title: string;
+  gifts: Gift[];
 }
 
 interface Users {
   users: [
     {
-      id: number,
-      username: string,
-      wishlists: Wishlist[]
-    }
-  ]
+      id: number;
+      username: string;
+      wishlists: Wishlist[];
+    },
+  ];
 }

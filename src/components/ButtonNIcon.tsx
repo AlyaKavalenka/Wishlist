@@ -6,10 +6,12 @@ interface ButtonNIconProps {
   mode: 'edit' | 'delete' | 'share';
 }
 
-export default function ButtonNIcon (props: ButtonNIconProps) {
-  const {src, mode} = props;
+export default function ButtonNIcon(props: ButtonNIconProps) {
+  const { src, mode } = props;
 
   return (
-    <button className='hover:bg-orange-900/35 p-1 rounded-md'><Image src={src} alt={mode} /></button>
-  )
+    <button className="hover:bg-orange-900/35 p-1 rounded-md">
+      <Image src={src} alt={mode} />
+    </button>
+  );
 }
