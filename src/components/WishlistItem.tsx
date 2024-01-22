@@ -1,8 +1,5 @@
 import Link from 'next/link';
-import editIcon from '../../public/images/icons/edit-icon.svg';
-import crossIcon from '../../public/images/icons/cross-icon.svg';
-import shareIcon from '../../public/images/icons/share-icon.svg';
-import ButtonNIcon from './ButtonNIcon';
+import WishlistControllers from './WishListControllers';
 
 interface WishlistItemProps {
   wishlist: string;
@@ -23,11 +20,7 @@ export default function WishlistItem(props: WishlistItemProps) {
       >
         {wishlist}
       </Link>
-      <div className="flex items-center">
-        <ButtonNIcon src={editIcon} mode="edit" />
-        <ButtonNIcon src={crossIcon} mode="delete" />
-        <ButtonNIcon src={shareIcon} mode="share" />
-      </div>
+      <WishlistControllers />
     </section>
   );
 }

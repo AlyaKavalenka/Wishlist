@@ -12,7 +12,7 @@ export interface Wishlist {
   wishes: Wish[];
 }
 
-interface Users {
+export interface Users {
   users: [
     {
       id: number;
