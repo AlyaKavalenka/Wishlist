@@ -1,4 +1,4 @@
-interface Gift {
+export interface Wish {
   id: number;
   name: string;
   description: string;
@@ -6,10 +6,10 @@ interface Gift {
   photos: string[];
 }
 
-interface Wishlist {
+export interface Wishlist {
   id: number;
   title: string;
-  gifts: Gift[];
+  wishes: Wish[];
 }
 
 interface Users {

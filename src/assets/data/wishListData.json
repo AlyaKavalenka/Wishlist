@@ -7,15 +7,16 @@
         {
           "id": 201,
           "title": "Свадьба",
-          "gifts": [
+          "wishes": [
             {
               "id": 1009,
               "name": "Фотокамера Canon EOS R5",
               "description": "Мы мечтаем о красивых фотографиях на свадьбе! Подарите нам профессиональную фотокамеру, например, Canon EOS R5. Ссылка для сравнения: https://example.com/canon-camera",
               "link": "https://example.com/canon-camera",
               "photos": [
-                "https://example.com/camera_photo1.jpg",
-                "https://example.com/camera_photo2.jpg"
+                "https://i1.adis.ws/i/canon/15_eos_90d_bk_thefront_ef-s18-135mm_3.5-5.6isusm_square_6bd191e26825499fb5fe88e57a763f7a",
+                "https://i1.adis.ws/i/canon/eos_1300d-ef-s18-55-iii-fsl_d9eaba170f7c4a999269daeb2df54d24?$prod-spec-hero-1by1-jpg$",
+                "https://i1.adis.ws/i/canon/eos_70d-frt-w-ef-s-18-135mm-is-stm_75b48686b5b84d21b645d3e8d0be559b?$block-hero-header-3by2-dt-jpg$"
               ]
             },
             {
@@ -53,15 +54,15 @@
         {
           "id": 101,
           "title": "День рождения",
-          "gifts": [
+          "wishes": [
             {
               "id": 1001,
               "name": "Новый смартфон",
               "description": "Подарите мне новый смартфон, например, iPhone 13 Pro.",
               "link": "https://example.com/iphone13",
               "photos": [
-                "https://example.com/iphone_photo1.jpg",
-                "https://example.com/iphone_photo2.jpg"
+                "https://gsmarena.by/upload/iblock/785/785e5b6c1ec43d8cff8a628a784cf0f1.jpg",
+                "https://www.google.com/url?sa=i&url=https%3A%2F%2F5zv.by%2Fapple-iphone-13-pro-128gb&psig=AOvVaw3AfcTUujqLhL_iekqsTOvZ&ust=1705994508159000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIjp2Py68IMDFQAAAAAdAAAAABAI"
               ]
             },
             {
@@ -99,7 +100,7 @@
         {
           "id": 103,
           "title": "Новый год",
-          "gifts": [
+          "wishes": [
             {
               "id": 1005,
               "name": "Путешествие в Париж",
@@ -151,7 +152,7 @@
         {
           "id": 201,
           "title": "Свадьба",
-          "gifts": [
+          "wishes": [
             {
               "id": 1009,
               "name": "Фотокамера Canon EOS R5",
