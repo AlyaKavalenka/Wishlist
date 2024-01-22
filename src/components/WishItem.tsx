@@ -2,7 +2,7 @@ import { Wish } from '@/types/types';
 import Image from 'next/image';
 import crossIcon from '../../public/images/icons/cross-icon.svg';
 import editIcon from '../../public/images/icons/edit-icon.svg';
-import ButtonNIcon from './ButtonNIcon';
+import BtnNIcon from './BtnNIcon';
 
 interface WishItemProps {
   wish: Wish;
@@ -21,8 +21,8 @@ export default function WishItem(props: WishItemProps) {
       <article className="flex gap-1 justify-between items-center">
         <span className="text-lg">{wish.name}</span>
         <div className="opacity-0 group-hover:opacity-100 transition-opacity delay-300 ease-in-out">
-          <ButtonNIcon src={editIcon} mode="edit_wish" />
-          <ButtonNIcon src={crossIcon} mode="delete_wish" />
+          <BtnNIcon src={editIcon} mode="edit_wish" />
+          <BtnNIcon src={crossIcon} mode="delete_wish" />
         </div>
       </article>
       <article

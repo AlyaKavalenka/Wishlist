@@ -4,9 +4,10 @@ import { useSearchParams } from 'next/navigation';
 import mockData from '@/assets/data/wishListData.json';
 import BlockWrapper from '@/components/BlockWrapper';
 import arrowIcon from '../../../public/images/icons/arrow-icon.svg';
-import ButtonNIcon from '@/components/ButtonNIcon';
+import ButtonNIcon from '@/components/BtnNIcon';
 import WishlistControllers from '@/components/WishListControllers';
 import WishItem from '@/components/WishItem';
+import BtnPlus from '@/components/BtnPlus';
 
 export default function WishlistPage({
   params,
@@ -21,7 +22,7 @@ export default function WishlistPage({
   );
 
   return (
-    <section>
+    <section className="relative">
       <BlockWrapper>
         <section className="flex gap-1 items-center justify-between">
           <ButtonNIcon src={arrowIcon} mode="return" />
@@ -38,6 +39,7 @@ export default function WishlistPage({
             ))
           : 'empty'}
       </BlockWrapper>
+      <BtnPlus mode="wish" />
     </section>
   );
 }
