@@ -1,13 +1,14 @@
-import { wishlistApi } from '@/services/wishlist';
+import { api } from '@/lib/api/api';
 import { configureStore } from '@reduxjs/toolkit';
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      [wishlistApi.reducerPath]: wishlistApi.reducer,
+      [api.reducerPath]: api.reducer,
+      IsOpenModal: IsOpenModalSlice,
     },
     middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware().concat(wishlistApi.middleware),
+      getDefaultMiddleware().concat(api.middleware),
   });
 };
 
