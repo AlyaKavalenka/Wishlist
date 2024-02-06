@@ -13,6 +13,7 @@ export default function FormInputText(props: FormInputTextProps) {
     <Controller
       name={name}
       control={control}
+      defaultValue=""
       render={({ field: { onChange, value }, fieldState: { error } }) => (
         <div>
           <div className="relative z-0">

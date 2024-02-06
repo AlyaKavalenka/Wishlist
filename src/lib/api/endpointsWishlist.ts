@@ -5,12 +5,14 @@ const endpointsWishlist = api.injectEndpoints({
     createWishlist: builder.mutation({
       query: (body: { title: string; user_id: number }) => ({
         url: `wishlist`,
-        method: 'POST ',
+        method: 'POST',
         body,
       }),
+      invalidatesTags: [{ type: 'Wishlists', id: 'LIST' }],
     }),
     getWishlistsByUser: builder.query({
       query: (userId) => `wishlist?id=${userId}`,
+      providesTags: [{ type: 'Wishlists', id: 'LIST' }],
     }),
   }),
   overrideExisting: false,

@@ -4,6 +4,7 @@ import { useGetWishlistsByUserQuery } from '@/lib/api/endpointsWishlist';
 import WishlistItem from './WishlistItem';
 
 export default function Wishlists() {
+  // TODO: change user_id (3)
   const { data, error, isLoading } = useGetWishlistsByUserQuery(3);
 
   return (

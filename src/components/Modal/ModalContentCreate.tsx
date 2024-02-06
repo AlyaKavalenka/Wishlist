@@ -1,16 +1,26 @@
-import { useForm } from 'react-hook-form';
+import { FieldValues, useForm } from 'react-hook-form';
 import FormInputText from '../Form/FormInputText';
 import useModal from '@/hooks/useModal';
+import { useCreateWishlistMutation } from '@/lib/api/endpointsWishlist';
 
 export default function ModalContentCreate() {
-  const { register, handleSubmit, reset, control, setValue } = useForm();
+  const { handleSubmit, control } = useForm();
   const { toggle } = useModal();
+
+  const [createWishlist] = useCreateWishlistMutation();
 
   const btnStyle =
     'text-orange-900 hover:bg-orange-700/20 rounded py-1 px-2 text-sm';
 
+  function onSubmit(data: FieldValues) {
+    // TODO: change user_id
+    createWishlist({ title: data.createWishlist, user_id: 3 }).then(() =>
+      toggle(),
+    );
+  }
+
   return (
-    <form className="flex flex-col gap-4">
+    <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
       <FormInputText
         name="createWishlist"
         control={control}
@@ -27,13 +37,7 @@ export default function ModalContentCreate() {
         >
           Cancel
         </button>
-        <button
-          type="submit"
-          className={`${btnStyle}`}
-          onClick={(e) => {
-            e.preventDefault();
-          }}
-        >
+        <button type="submit" className={`${btnStyle}`}>
           Create
         </button>
       </div>
