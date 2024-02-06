@@ -1,6 +1,6 @@
 'use client';
 
-import { useGetWishlistsByUserQuery } from '@/services/wishlist';
+import { useGetWishlistsByUserQuery } from '@/lib/api/endpointsWishlist';
 import WishlistItem from './WishlistItem';
 
 export default function Wishlists() {

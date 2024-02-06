@@ -1,5 +1,6 @@
 import { api } from '@/lib/api/api';
 import { configureStore } from '@reduxjs/toolkit';
+import IsOpenModalSlice from './reducers/IsOpenModalSlice';
 
 export const makeStore = () => {
   return configureStore({

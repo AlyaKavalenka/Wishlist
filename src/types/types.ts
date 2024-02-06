@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface Wish {
   id: number;
   name: string;
@@ -20,4 +22,10 @@ export interface Users {
       wishlists: Wishlist[];
     },
   ];
+}
+
+export interface ModalProps {
+  isOpen: boolean;
+  toggle: () => void;
+  children?: ReactNode;
 }
