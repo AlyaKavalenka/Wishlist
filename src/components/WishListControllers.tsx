@@ -22,7 +22,7 @@ export default function WishlistControllers(props: WishlistControllersProps) {
       <BtnNIcon
         src={editIcon}
         mode="edit_wishlist"
-        disabled={false}
+        disabled
         handleClick={() => {}}
       />
       <BtnNIcon
