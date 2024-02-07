@@ -19,13 +19,19 @@ export default function WishlistControllers(props: WishlistControllersProps) {
 
   return (
     <div className="flex items-center">
-      <BtnNIcon src={editIcon} mode="edit_wishlist" handleClick={() => {}} />
+      <BtnNIcon
+        src={editIcon}
+        mode="edit_wishlist"
+        disabled={false}
+        handleClick={() => {}}
+      />
       <BtnNIcon
         src={crossIcon}
         mode="delete_wishlist"
         handleClick={handleClickDelete}
+        disabled={false}
       />
-      <BtnNIcon src={shareIcon} mode="share" handleClick={() => {}} />
+      <BtnNIcon src={shareIcon} mode="share" disabled handleClick={() => {}} />
     </div>
   );
 }

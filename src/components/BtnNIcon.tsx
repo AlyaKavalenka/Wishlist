@@ -11,16 +11,19 @@ interface ButtonNIconProps {
     | 'delete_wish'
     | 'edit_wish';
   handleClick: () => void;
+  disabled: boolean;
 }
 
 export default function ButtonNIcon(props: ButtonNIconProps) {
-  const { src, mode, handleClick } = props;
+  const { src, mode, handleClick, disabled } = props;
 
   // TODO: by hover on button add tip
   return (
     <button
-      className="hover:bg-orange-900/35 p-1 rounded-md"
+      className="hover:bg-orange-900/35 p-1 rounded-md cursor-pointer 
+      disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:opacity-30"
       onClick={handleClick}
+      disabled={disabled}
     >
       <Image src={src} alt={mode} />
     </button>
