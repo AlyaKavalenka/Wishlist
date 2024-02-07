@@ -1,6 +1,6 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import BlockWrapper from '@/components/BlockWrapper';
 import arrowIcon from '../../../public/images/icons/arrow-icon.svg';
 import ButtonNIcon from '@/components/BtnNIcon';
@@ -16,6 +16,7 @@ export default function WishlistPage({
   params: { wishlist: string };
 }) {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const wishlistId = +decodeURIComponent(searchParams.get('id') || '');
 
   const { data, error, isLoading } = useGetWishesByWishlistQuery(wishlistId);
@@ -27,7 +28,7 @@ export default function WishlistPage({
           <ButtonNIcon
             src={arrowIcon}
             mode="return"
-            handleClick={() => {}}
+            handleClick={() => router.back()}
             disabled={false}
           />
           <h2 className="text-xl font-medium">
