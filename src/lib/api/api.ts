@@ -7,6 +7,6 @@ const server_url = 'http://localhost:8080';
 export const api = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({ baseUrl: server_url + '/api/' }),
-  tagTypes: ['Wishlists'],
+  tagTypes: ['Wishlists', 'Wishes'],
   endpoints: () => ({}),
 });

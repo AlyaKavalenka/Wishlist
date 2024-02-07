@@ -21,8 +21,18 @@ export default function WishItem(props: WishItemProps) {
       <article className="flex gap-1 justify-between items-center">
         <span className="text-lg">{wish.name}</span>
         <div className="opacity-0 group-hover:opacity-100 transition-opacity delay-300 ease-in-out">
-          <BtnNIcon src={editIcon} mode="edit_wish" />
-          <BtnNIcon src={crossIcon} mode="delete_wish" />
+          <BtnNIcon
+            src={editIcon}
+            mode="edit_wish"
+            handleClick={() => {}}
+            disabled
+          />
+          <BtnNIcon
+            src={crossIcon}
+            mode="delete_wish"
+            handleClick={() => {}}
+            disabled
+          />
         </div>
       </article>
       <article
