@@ -12,11 +12,30 @@ const endpointsWishlist = api.injectEndpoints({
     }),
     getWishlistsByUser: builder.query({
       query: (userId) => `wishlist?id=${userId}`,
-      providesTags: [{ type: 'Wishlists', id: 'LIST' }],
+      providesTags: (res) =>
+        res
+          ? [
+              ...res.map(({ id }: { id: number }) => ({
+                type: 'Wishlists',
+                id: id,
+              })),
+              { type: 'Wishlists', id: 'LIST' },
+            ]
+          : [{ type: 'Wishlists', id: 'LIST' }],
+    }),
+    deleteWishlist: builder.mutation({
+      query: (id) => ({
+        url: `wishlist/${id}`,
+        method: 'DELETE',
+      }),
+      invalidatesTags: (_res, _err, id) => [{ type: 'Wishlists', id: id }],
     }),
   }),
   overrideExisting: false,
 });
 
-export const { useCreateWishlistMutation, useGetWishlistsByUserQuery } =
-  endpointsWishlist;
+export const {
+  useCreateWishlistMutation,
+  useGetWishlistsByUserQuery,
+  useDeleteWishlistMutation,
+} = endpointsWishlist;

@@ -20,7 +20,7 @@ export default function WishlistItem(props: WishlistItemProps) {
       >
         {wishlist}
       </Link>
-      <WishlistControllers />
+      <WishlistControllers wishlistId={wishlistId} />
     </section>
   );
 }
