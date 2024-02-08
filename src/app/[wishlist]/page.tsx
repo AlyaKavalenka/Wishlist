@@ -33,7 +33,7 @@ export default function WishlistPage({
 
   return (
     <section className="flex relative flex-grow flex-col">
-      <BlockWrapper>
+      <BlockWrapper isGrow={false}>
         <section className="flex gap-1 items-center justify-between">
           <ButtonNIcon
             src={arrowIcon}
@@ -47,7 +47,7 @@ export default function WishlistPage({
           <WishlistControllers wishlistId={wishlistId} />
         </section>
       </BlockWrapper>
-      <BlockWrapper>
+      <BlockWrapper isGrow>
         {error ? (
           <>Oh no, there was an error</>
         ) : isLoading ? (

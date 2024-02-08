@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <main className="flex items-start relative flex-grow">
-      <BlockWrapper>
+      <BlockWrapper isGrow>
         <Wishlists />
       </BlockWrapper>
       <BtnPlus mode="wishlist" />
