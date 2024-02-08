@@ -28,7 +28,7 @@ export default function ModalContentCreateWish(
         wishlist_id,
         name: wishName,
         description: wishDescription,
-        link: wishLink,
+        links: wishLink,
         photos: [],
       }).then(() => toggle());
     } else {

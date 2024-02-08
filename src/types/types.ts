@@ -4,7 +4,7 @@ export interface Wish {
   wishlist_id: number;
   name: string;
   description: string;
-  link: string;
+  links: string[];
   photos: string[];
   id?: number;
 }
