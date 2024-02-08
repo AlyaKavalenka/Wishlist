@@ -9,6 +9,11 @@ import WishItem from '@/components/WishItem';
 import BtnPlus from '@/components/BtnPlus';
 import { useGetWishesByWishlistQuery } from '@/lib/api/endpointsWish';
 import { Wish } from '@/types/types';
+import Modal from '@/components/Modal/Modal';
+import useModal from '@/hooks/useModal';
+import { useAppSelector } from '@/lib/hooks';
+import { useContext } from 'react';
+import { ModalContentContext } from '@/contexts/ModalContentContext';
 
 export default function WishlistPage({
   params,
@@ -17,12 +22,17 @@ export default function WishlistPage({
 }) {
   const searchParams = useSearchParams();
   const router = useRouter();
+
+  const { toggle } = useModal();
+  const isOpen = useAppSelector((state) => state.IsOpenModal.value);
+  const { modalContent } = useContext(ModalContentContext);
+
   const wishlistId = +decodeURIComponent(searchParams.get('id') || '');
 
   const { data, error, isLoading } = useGetWishesByWishlistQuery(wishlistId);
 
   return (
-    <section className="relative">
+    <section className="flex relative flex-grow flex-col">
       <BlockWrapper>
         <section className="flex gap-1 items-center justify-between">
           <ButtonNIcon
@@ -48,7 +58,10 @@ export default function WishlistPage({
           data.map((wish: Wish) => <WishItem wish={wish} key={wish.id} />)
         )}
       </BlockWrapper>
-      <BtnPlus mode="wish" />
+      <BtnPlus mode="wish" wishlist_id={wishlistId} />
+      <Modal toggle={toggle} isOpen={isOpen}>
+        {modalContent}
+      </Modal>
     </section>
   );
 }

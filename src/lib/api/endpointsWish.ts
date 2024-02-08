@@ -1,3 +1,4 @@
+import { Wish } from '@/types/types';
 import { api } from './api';
 
 const endpointsWish = api.injectEndpoints({
@@ -15,7 +16,16 @@ const endpointsWish = api.injectEndpoints({
             ]
           : [{ type: 'Wishes', id: 'LIST' }],
     }),
+    createWish: builder.mutation({
+      query: (body: Wish) => ({
+        url: 'wish',
+        method: 'POST',
+        body,
+      }),
+      invalidatesTags: [{ type: 'Wishes', id: 'LIST' }],
+    }),
   }),
 });
 
-export const { useGetWishesByWishlistQuery } = endpointsWish;
+export const { useGetWishesByWishlistQuery, useCreateWishMutation } =
+  endpointsWish;

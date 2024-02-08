@@ -40,11 +40,16 @@ export default function WishItem(props: WishItemProps) {
       flex-col gap-1"
       >
         <span>{wish.description}</span>
-        <a className="text-sm underline decoration-solid">{wish.link}</a>
+        <a
+          href={wish.link}
+          target="_blank"
+          className="text-sm underline decoration-solid"
+        >
+          {wish.link}
+        </a>
         <article className="flex gap-2 py-2">
           {wish.photos.map((photo) => (
             <button key={photo}>
-              {/* TODO: click by photo to size it */}
               <Image
                 src={photo}
                 alt="wish small photo"

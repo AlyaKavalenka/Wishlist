@@ -1,11 +1,12 @@
 import { ReactNode } from 'react';
 
 export interface Wish {
-  id: number;
+  wishlist_id: number;
   name: string;
   description: string;
   link: string;
   photos: string[];
+  id?: number;
 }
 
 export interface Wishlist {
