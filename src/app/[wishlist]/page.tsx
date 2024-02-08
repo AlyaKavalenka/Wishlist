@@ -3,10 +3,10 @@
 import { useRouter, useSearchParams } from 'next/navigation';
 import BlockWrapper from '@/components/BlockWrapper';
 import arrowIcon from '../../../public/images/icons/arrow-icon.svg';
-import ButtonNIcon from '@/components/BtnNIcon';
+import ButtonNIcon from '@/components/Btns/BtnNIcon';
 import WishlistControllers from '@/components/WishListControllers';
 import WishItem from '@/components/WishItem';
-import BtnPlus from '@/components/BtnPlus';
+import BtnPlus from '@/components/Btns/BtnPlus';
 import { useGetWishesByWishlistQuery } from '@/lib/api/endpointsWish';
 import { Wish } from '@/types/types';
 import Modal from '@/components/Modal/Modal';

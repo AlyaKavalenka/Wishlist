@@ -1,4 +1,4 @@
-import BtnNIcon from './BtnNIcon';
+import BtnNIcon from './Btns/BtnNIcon';
 import editIcon from '../../public/images/icons/edit-icon.svg';
 import crossIcon from '../../public/images/icons/cross-icon.svg';
 import shareIcon from '../../public/images/icons/share-icon.svg';

@@ -2,7 +2,7 @@ import { Wish } from '@/types/types';
 import Image from 'next/image';
 import crossIcon from '../../public/images/icons/cross-icon.svg';
 import editIcon from '../../public/images/icons/edit-icon.svg';
-import BtnNIcon from './BtnNIcon';
+import BtnNIcon from './Btns/BtnNIcon';
 
 interface WishItemProps {
   wish: Wish;

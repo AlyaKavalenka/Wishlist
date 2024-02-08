@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import plusIcon from '../../public/images/icons/plus-icon.svg';
+import plusIcon from '../../../public/images/icons/plus-icon.svg';
 import useModal from '@/hooks/useModal';
 import { useContext } from 'react';
 import { ModalContentContext } from '@/contexts/ModalContentContext';
-import ModalContentCreateWishlist from './Modal/ModalContentCreateWishlist';
-import ModalContentCreateWish from './Modal/ModalContentCreateWish';
+import ModalContentCreateWishlist from '../Modal/ModalContentCreateWishlist';
+import ModalContentCreateWish from '../Modal/ModalContentCreateWish';
 
 interface BtnPlusProps {
   mode: 'wishlist' | 'wish';

@@ -1,7 +1,7 @@
 'use client';
 
 import BlockWrapper from '@/components/BlockWrapper';
-import BtnPlus from '@/components/BtnPlus';
+import BtnPlus from '@/components/Btns/BtnPlus';
 import Modal from '@/components/Modal/Modal';
 import Wishlists from '@/components/Wishlists';
 import { ModalContentContext } from '@/contexts/ModalContentContext';
