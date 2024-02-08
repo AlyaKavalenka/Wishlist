@@ -40,7 +40,7 @@ export default function WishItem(props: WishItemProps) {
       flex-col gap-1"
       >
         <span>{wish.description}</span>
-        <section>
+        <section className="flex flex-col gap-0.5">
           {wish.links.map((link) => (
             <a
               href={link}
