@@ -14,7 +14,10 @@ export default function FormInputText(props: FormInputTextProps) {
       name={name}
       control={control}
       defaultValue=""
-      render={({ field: { onChange, value }, fieldState: { error } }) => (
+      render={({
+        field: { onChange, onBlur, value },
+        fieldState: { error },
+      }) => (
         <div>
           <div className="relative z-0">
             <input
@@ -24,6 +27,7 @@ export default function FormInputText(props: FormInputTextProps) {
               placeholder=" "
               onChange={onChange}
               value={value}
+              onBlur={onBlur}
             />
             <label
               htmlFor={name}

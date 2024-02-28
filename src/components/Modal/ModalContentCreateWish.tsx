@@ -3,6 +3,7 @@ import FormInputText from '../Form/FormInputText';
 import useModal from '@/hooks/useModal';
 import { useCreateWishMutation } from '@/lib/api/endpointsWish';
 import { useEffect } from 'react';
+import Image from 'next/image';
 
 interface ModalContentCreateWishProps {
   wishlist_id: number | undefined;
@@ -13,13 +14,21 @@ export default function ModalContentCreateWish(
 ) {
   const { wishlist_id } = props;
 
-  const { handleSubmit, control } = useForm();
-  const { fields: linksFields, append: appendLink } = useFieldArray({
+  const { handleSubmit, control, register, getValues } = useForm();
+  const {
+    fields: linksFields,
+    append: appendLink,
+    remove: removeLink,
+  } = useFieldArray({
     control,
     name: 'wishLinks',
   });
 
-  const { fields: photosFields, append: appendPhoto } = useFieldArray({
+  const {
+    fields: photosFields,
+    append: appendPhoto,
+    remove: removePhoto,
+  } = useFieldArray({
     control,
     name: 'wishPhotos',
   });
@@ -54,8 +63,34 @@ export default function ModalContentCreateWish(
     }
   }
 
+  useEffect(() => {
+    const linksFieldsValues: string[] = getValues('wishLinks');
+    linksFieldsValues.map(async (link, index) => {
+      if (!!link) {
+        const isImage = await fetch(link, { method: 'HEAD' })
+          .then((response) =>
+            response.headers.get('Content-Type')?.startsWith('image'),
+          )
+          .catch((error) => {
+            console.error(
+              'Custom Error: not image or not supposed to determinate image. ',
+              'Error message: ',
+              error.message,
+            );
+          });
+        if (isImage) {
+          appendPhoto(link);
+          removeLink(index);
+        }
+      }
+    });
+  }, [appendPhoto, getValues, linksFields, removeLink]);
+
   return (
-    <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
+    <form
+      className="flex flex-col gap-4 max-h-96 overflow-y-auto overscroll-none scroll-smooth scrollbar-thin scrollbar-track-orange-200 scrollbar-thumb-orange-400 p-2"
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <FormInputText name="wishName" control={control} label="Wish name" />
       <FormInputText
         name="wishDescription"
@@ -77,6 +112,20 @@ export default function ModalContentCreateWish(
       >
         Add a link to a photo or website
       </button>
+      <section className="flex flex-wrap gap-2">
+        {...photosFields.map((filed, index) => (
+          <Image
+            src={getValues(`wishPhotos.${index}`)}
+            {...register(`wishPhotos.${index}`)}
+            width={70}
+            height={70}
+            unoptimized
+            key={filed.id}
+            alt={getValues(`wishPhotos.${index}`)}
+            className="rounded-md shadow"
+          />
+        ))}
+      </section>
       <span className="text-xs opacity-45">* - optional</span>
       <div className="flex justify-end gap-1">
         <button
