@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Roboto_Serif } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import StoreProvider from './StoreProvider';
 import { ModalContentContextProvider } from '@/contexts/ModalContentContext';
 
-const inter = Inter({ subsets: ['latin'] });
+const roboto_serif = Roboto_Serif({ subsets: ['latin', 'cyrillic'] });
 
 export const metadata: Metadata = {
   title: 'Wishlist',
@@ -21,7 +21,7 @@ export default function RootLayout({
     <StoreProvider>
       <ModalContentContextProvider>
         <html lang="en">
-          <body className={inter.className}>
+          <body className={roboto_serif.className}>
             <Header />
             {children}
           </body>
