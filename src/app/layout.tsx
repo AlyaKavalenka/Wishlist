@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '@/components/Header';
 import StoreProvider from './StoreProvider';
 import { ModalContentContextProvider } from '@/contexts/ModalContentContext';
+import Footer from '@/components/Footer';
 
 const roboto_serif = Roboto_Serif({ subsets: ['latin', 'cyrillic'] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
           <body className={roboto_serif.className}>
             <Header />
             {children}
+            <Footer />
           </body>
         </html>
       </ModalContentContextProvider>
