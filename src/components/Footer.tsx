@@ -10,7 +10,7 @@ export default function Footer() {
   const pathname = usePathname();
 
   return (
-    <footer className="sticky bottom-0 flex justify-between min-h-14 h-14">
+    <footer className="sticky bottom-0 flex justify-between min-h-14 h-14 bg-white/90 z-10">
       <FooterLink
         imgSrc={bunniesImg}
         alt="friends bunnies"

@@ -15,6 +15,14 @@ export interface Wishlist {
   wishes: Wish[];
 }
 
+export interface WishlistResponse {
+  event_date: Date | null;
+  title: string;
+  update_at: Date;
+  wishlist_id: string;
+  wishlist_img: string | null;
+}
+
 export interface Users {
   users: [
     {

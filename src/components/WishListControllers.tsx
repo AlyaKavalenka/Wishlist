@@ -6,7 +6,7 @@ import { useDeleteWishlistMutation } from '@/lib/api/endpointsWishlist';
 import { useRouter } from 'next/navigation';
 
 interface WishlistControllersProps {
-  wishlistId: number;
+  wishlistId: string;
 }
 
 export default function WishlistControllers(props: WishlistControllersProps) {
