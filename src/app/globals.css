@@ -20,9 +20,6 @@
 }
 
 body {
-  background: url(../../public/images/christmas-1.png), lightgray;
-  background-size: cover;
-
   position: relative;
 
   display: flex;

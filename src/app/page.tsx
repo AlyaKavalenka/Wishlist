@@ -1,7 +1,6 @@
 'use client';
 
 import BlockWrapper from '@/components/BlockWrapper';
-import BtnPlus from '@/components/Btns/BtnPlus';
 import Modal from '@/components/Modal/Modal';
 import Wishlists from '@/components/Wishlists';
 import { ModalContentContext } from '@/contexts/ModalContentContext';
@@ -17,10 +16,9 @@ export default function Home() {
 
   return (
     <main className="flex items-start relative flex-grow">
-      <BlockWrapper isGrow>
+      <BlockWrapper>
         <Wishlists />
       </BlockWrapper>
-      <BtnPlus mode="wishlist" />
       <Modal isOpen={isOpen} toggle={toggle}>
         {modalContent}
       </Modal>
