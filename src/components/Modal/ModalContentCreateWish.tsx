@@ -5,14 +5,12 @@ import { useCreateWishMutation } from '@/lib/api/endpointsWish';
 import { useEffect } from 'react';
 import Image from 'next/image';
 
-interface ModalContentCreateWishProps {
-  wishlist_id: number | undefined;
-}
+interface ModalContentCreateWishProps {}
 
 export default function ModalContentCreateWish(
   props: ModalContentCreateWishProps,
 ) {
-  const { wishlist_id } = props;
+  const {} = props;
 
   const { handleSubmit, control, register, getValues } = useForm();
   const {
@@ -48,19 +46,19 @@ export default function ModalContentCreateWish(
   function onSubmit(data: FieldValues) {
     const { wishName, wishDescription, wishLinks, wishPhotos } = data;
 
-    if (wishlist_id) {
-      createWish({
-        wishlist_id,
-        name: wishName,
-        description: wishDescription,
-        links: wishLinks,
-        photos: wishPhotos,
-      }).then(() => toggle());
-    } else {
-      throw new Error(
-        'Error: something went wrong with wishlist_id:' + wishlist_id,
-      );
-    }
+    // if (wishlist_id) {
+    //   createWish({
+    //     wishlist_id,
+    //     name: wishName,
+    //     description: wishDescription,
+    //     links: wishLinks,
+    //     photos: wishPhotos,
+    //   }).then(() => toggle());
+    // } else {
+    //   throw new Error(
+    //     'Error: something went wrong with wishlist_id:' + wishlist_id,
+    //   );
+    // }
   }
 
   useEffect(() => {

@@ -10,21 +10,21 @@ export default function BtnPlus() {
   const { toggle } = useModal();
   const { setModalContent } = useContext(ModalContentContext);
   const [isActiveClick, setActiveClick] = useState(false);
+  const [mode, setMode] = useState(null);
 
   function handleClick() {
-    // if (mode === 'wishlist') {
-    //   setModalContent(<ModalContentCreateWishlist />);
-    // } else {
-    //   setModalContent(<ModalContentCreateWish wishlist_id={wishlist_id} />);
-    // }
-    // toggle();
-
     setActiveClick(!isActiveClick);
+    if (!isActiveClick) setMode(null);
   }
 
   function handleSecondBtnsClick() {
     if (isActiveClick) {
-      console.log('click');
+      if (mode === 'wishlist') {
+        setModalContent(<ModalContentCreateWishlist />);
+      } else if (mode === 'wish') {
+        setModalContent(<ModalContentCreateWish />);
+      }
+      toggle();
     }
   }
 
