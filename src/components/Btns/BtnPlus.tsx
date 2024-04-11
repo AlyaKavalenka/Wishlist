@@ -48,12 +48,12 @@ export default function BtnPlus() {
           Wish
         </button>
         <button
-          className={`bg-indigo-400/40 rounded-full shadow-md p-2 transition-transform ${
+          className={`bg-indigo-400/40 rounded-full shadow-md p-3 transition-transform ${
             isActiveClick && '-rotate-45'
           }`}
           onClick={handleClick}
         >
-          <Image src={plusIcon} alt={`add`} className="w-9" />
+          <Image src={plusIcon} alt={`add`} className="w-7" />
         </button>
       </section>
     </section>
