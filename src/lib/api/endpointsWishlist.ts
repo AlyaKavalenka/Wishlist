@@ -1,9 +1,15 @@
 import { api } from './api';
 
+export interface createWishlistBodyReq {
+  title: string;
+  event_date?: Date;
+  wishlist_img?: string;
+}
+
 const endpointsWishlist = api.injectEndpoints({
   endpoints: (builder) => ({
     createWishlist: builder.mutation({
-      query: (body: { title: string; user_id: number }) => ({
+      query: (body: createWishlistBodyReq) => ({
         url: `wishlist`,
         method: 'POST',
         body,

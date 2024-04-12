@@ -5,7 +5,6 @@ import WishlistItem from './WishlistItem';
 import { WishlistResponse } from '@/types/types';
 
 export default function Wishlists() {
-  // TODO: change user_id (3)
   const { data, error, isLoading } = useGetWishlistsQuery(null);
 
   return (

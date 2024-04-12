@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import plusIcon from '../../../public/images/icons/plus-icon.svg';
 import useModal from '@/hooks/useModal';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { ModalContentContext } from '@/contexts/ModalContentContext';
 import ModalContentCreateWishlist from '../Modal/ModalContentCreateWishlist';
 import ModalContentCreateWish from '../Modal/ModalContentCreateWish';
@@ -11,24 +11,11 @@ export default function BtnPlus() {
   const { toggle } = useModal();
   const { setModalContent } = useContext(ModalContentContext);
   const [isActiveClick, setActiveClick] = useState(false);
-  const [mode, setMode] = useState<null | 'wishlist' | 'wish'>(null);
   const isOpen = useAppSelector((state) => state.IsOpenModal.value);
 
   function handleClick() {
     setActiveClick(!isActiveClick);
   }
-
-  useEffect(() => {
-    if (isActiveClick) {
-      if (mode === 'wishlist') {
-        setModalContent(<ModalContentCreateWishlist />);
-      } else if (mode === 'wish') {
-        setModalContent(<ModalContentCreateWish />);
-      }
-      toggle();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mode]);
 
   const secondBtnsStyle = `bg-indigo-400/40 rounded-lg shadow-md text-indigo-700 py-2 px-3 tracking-wide opacity-0 transition-opacity ${isActiveClick && 'opacity-100'}`;
 
@@ -40,7 +27,9 @@ export default function BtnPlus() {
         type="button"
         className={secondBtnsStyle + ' self-end'}
         onClick={() => {
-          setMode('wishlist');
+          setModalContent(<ModalContentCreateWishlist />);
+          setActiveClick(false);
+          toggle();
         }}
       >
         Wishlist
@@ -50,7 +39,9 @@ export default function BtnPlus() {
           type="button"
           className={secondBtnsStyle}
           onClick={() => {
-            setMode('wish');
+            setModalContent(<ModalContentCreateWish />);
+            setActiveClick(false);
+            toggle();
           }}
         >
           Wish

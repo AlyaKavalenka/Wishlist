@@ -12,6 +12,23 @@ export default function WishlistItem(props: WishlistItemProps) {
 
   const { event_date, title, wishlist_id, wishlist_img } = wishlist;
 
+  const date = (event_date: Date) => {
+    const newDate = new Date(event_date);
+    let options: Intl.DateTimeFormatOptions = {
+      year: 'numeric',
+      day: 'numeric',
+      month: 'short',
+      timeZone: 'UTC',
+    };
+
+    if (newDate.getUTCHours() !== 0 && newDate.getUTCMinutes() !== 0) {
+      options.hour = 'numeric';
+      options.minute = '2-digit';
+    }
+
+    return newDate.toLocaleDateString('en', options);
+  };
+
   return (
     <section className="rounded-md flex flex-col gap-1 border border-black/15 shadow-md h-full max-h-44 w-full">
       <Link
@@ -36,15 +53,7 @@ export default function WishlistItem(props: WishlistItemProps) {
           </div>
           <div className="flex justify-end items-end">
             <span className="italic text-xs opacity-60">
-              {event_date
-                ? new Date(event_date).toLocaleDateString('en-EN', {
-                    year: 'numeric',
-                    day: 'numeric',
-                    month: 'short',
-                    hour: 'numeric',
-                    minute: '2-digit',
-                  })
-                : ''}
+              {event_date ? date(event_date) : ''}
             </span>
           </div>
         </div>

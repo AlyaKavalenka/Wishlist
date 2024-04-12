@@ -4,16 +4,18 @@ interface FormInputTextProps {
   name: string;
   control: Control;
   label: string;
+  required: boolean | string;
 }
 
 export default function FormInputText(props: FormInputTextProps) {
-  const { name, control, label } = props;
+  const { name, control, label, required } = props;
 
   return (
     <Controller
       name={name}
       control={control}
       defaultValue=""
+      rules={{ required }}
       render={({
         field: { onChange, onBlur, value },
         fieldState: { error },

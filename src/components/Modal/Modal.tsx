@@ -7,7 +7,7 @@ export default function Modal(props: ModalProps) {
     <>
       {isOpen && (
         <section
-          className="absolute flex w-full justify-center h-full items-center bg-white/30"
+          className="absolute flex w-full justify-center h-full items-start p-7 bg-white/30"
           onClick={toggle}
           onKeyDown={() => {}}
           role="textbox"
