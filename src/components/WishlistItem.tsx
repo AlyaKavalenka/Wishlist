@@ -26,6 +26,8 @@ export default function WishlistItem(props: WishlistItemProps) {
             src={wishlist_img || defaultWishlistPhoto}
             alt="wishlist"
             className="object-contain rounded-t-md"
+            priority={false}
+            placeholder="blur"
           />
         </div>
         <div className="flex flex-col items-center grow pb-1">

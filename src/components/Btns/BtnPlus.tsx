@@ -1,23 +1,24 @@
 import Image from 'next/image';
 import plusIcon from '../../../public/images/icons/plus-icon.svg';
 import useModal from '@/hooks/useModal';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ModalContentContext } from '@/contexts/ModalContentContext';
 import ModalContentCreateWishlist from '../Modal/ModalContentCreateWishlist';
 import ModalContentCreateWish from '../Modal/ModalContentCreateWish';
+import { useAppSelector } from '@/lib/hooks';
 
 export default function BtnPlus() {
   const { toggle } = useModal();
   const { setModalContent } = useContext(ModalContentContext);
   const [isActiveClick, setActiveClick] = useState(false);
-  const [mode, setMode] = useState(null);
+  const [mode, setMode] = useState<null | 'wishlist' | 'wish'>(null);
+  const isOpen = useAppSelector((state) => state.IsOpenModal.value);
 
   function handleClick() {
     setActiveClick(!isActiveClick);
-    if (!isActiveClick) setMode(null);
   }
 
-  function handleSecondBtnsClick() {
+  useEffect(() => {
     if (isActiveClick) {
       if (mode === 'wishlist') {
         setModalContent(<ModalContentCreateWishlist />);
@@ -26,16 +27,21 @@ export default function BtnPlus() {
       }
       toggle();
     }
-  }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mode]);
 
   const secondBtnsStyle = `bg-indigo-400/40 rounded-lg shadow-md text-indigo-700 py-2 px-3 tracking-wide opacity-0 transition-opacity ${isActiveClick && 'opacity-100'}`;
 
   return (
-    <section className="fixed pb-1 right-1 bottom-16 flex flex-col gap-3">
+    <section
+      className={`fixed pb-1 right-1 bottom-16 flex flex-col gap-3 ${isOpen && 'blur-sm'}`}
+    >
       <button
         type="button"
         className={secondBtnsStyle + ' self-end'}
-        onClick={handleSecondBtnsClick}
+        onClick={() => {
+          setMode('wishlist');
+        }}
       >
         Wishlist
       </button>
@@ -43,7 +49,9 @@ export default function BtnPlus() {
         <button
           type="button"
           className={secondBtnsStyle}
-          onClick={handleSecondBtnsClick}
+          onClick={() => {
+            setMode('wish');
+          }}
         >
           Wish
         </button>
