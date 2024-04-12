@@ -20,20 +20,29 @@ export default function ModalContentCreate() {
     );
   }
 
+  const OptionalHeader = (optionalHeaderProps: { headerText: string }) => (
+    <div className="flex gap-1">
+      <h4 className="text-stone-500 font-medium">
+        {optionalHeaderProps.headerText}
+      </h4>
+      <span className="text-stone-400 font-extralight">(optional)</span>
+    </div>
+  );
+
   return (
     <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
       <h3 className="text-slate-400 self-center">Create wish list</h3>
       <section className="flex flex-col gap-3">
         <FormInputText name="wishlistTitle" control={control} label="Title" />
         <section className="flex flex-col gap-1">
-          <h4 className="text-stone-500 font-medium">Event date & time</h4>
+          <OptionalHeader headerText="Event date" />
           <div className="flex gap-2">
             <FormInputDate name="wishlistEventDate" control={control} />
             <FormInputTime name="wishlistEventTime" control={control} />
           </div>
         </section>
         <section className="flex flex-col gap-1">
-          <h4 className="text-stone-500 font-medium">Upload image</h4>
+          <OptionalHeader headerText="Upload image" />
           <div className="grid grid-cols-2 gap-[1px]">
             <button
               type="button"
