@@ -27,13 +27,13 @@ export default function WishlistPage({
   const isOpen = useAppSelector((state) => state.IsOpenModal.value);
   const { modalContent } = useContext(ModalContentContext);
 
-  const wishlistId = +decodeURIComponent(searchParams.get('id') || '');
+  const wishlistId = decodeURIComponent(searchParams.get('id') || '');
 
   const { data, error, isLoading } = useGetWishesByWishlistQuery(wishlistId);
 
   return (
     <section className="flex relative flex-grow flex-col">
-      <BlockWrapper isGrow={false}>
+      <BlockWrapper>
         <section className="flex gap-1 items-center justify-between">
           <ButtonNIcon
             src={arrowIcon}
@@ -47,7 +47,7 @@ export default function WishlistPage({
           <WishlistControllers wishlistId={wishlistId} />
         </section>
       </BlockWrapper>
-      <BlockWrapper isGrow>
+      <BlockWrapper>
         {error ? (
           <>Oh no, there was an error</>
         ) : isLoading ? (
@@ -58,7 +58,7 @@ export default function WishlistPage({
           data.map((wish: Wish) => <WishItem wish={wish} key={wish.id} />)
         )}
       </BlockWrapper>
-      <BtnPlus mode="wish" wishlist_id={wishlistId} />
+      <BtnPlus />
       <Modal toggle={toggle} isOpen={isOpen}>
         {modalContent}
       </Modal>

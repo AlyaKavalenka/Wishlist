@@ -89,11 +89,17 @@ export default function ModalContentCreateWish(
       className="flex flex-col gap-4 max-h-96 overflow-y-auto overscroll-none scroll-smooth scrollbar-thin scrollbar-track-orange-200 scrollbar-thumb-orange-400 p-2"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <FormInputText name="wishName" control={control} label="Wish name" />
+      <FormInputText
+        name="wishName"
+        control={control}
+        label="Wish name"
+        required={false}
+      />
       <FormInputText
         name="wishDescription"
         control={control}
         label="Wish description*"
+        required={false}
       />
       {...linksFields.map((field, index) => (
         <FormInputText
@@ -101,6 +107,7 @@ export default function ModalContentCreateWish(
           control={control}
           label="Wish link*"
           key={field.id}
+          required={false}
         />
       ))}
       <button
