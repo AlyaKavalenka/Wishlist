@@ -3,6 +3,7 @@
 import { useGetWishlistsQuery } from '@/lib/api/endpointsWishlist';
 import WishlistItem from './WishlistItem';
 import { WishlistResponse } from '@/types/types';
+import EmptyWishlists from './EmptyWishlists/EmptyWishlists';
 
 export default function Wishlists() {
   const { data, error, isLoading } = useGetWishlistsQuery(null);
@@ -16,7 +17,7 @@ export default function Wishlists() {
         <>Oh no, there was an error</>
       ) : isLoading ? (
         <>Loading...</>
-      ) : (
+      ) : data.length ? (
         <section className="grid grid-cols-2 items-start gap-y-3 gap-x-3">
           {data
             .slice()
@@ -30,6 +31,8 @@ export default function Wishlists() {
               <WishlistItem key={item.wishlist_id} wishlist={item} />
             ))}
         </section>
+      ) : (
+        <EmptyWishlists />
       )}
     </main>
   );

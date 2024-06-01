@@ -9,7 +9,9 @@ export default function BlockWrapper(props: BlockWrapperProps) {
   const isOpen = useAppSelector((state) => state.IsOpenModal.value);
 
   return (
-    <section className={`flex px-4 pt-1 pb-2 grow ${isOpen && 'blur-sm'}`}>
+    <section
+      className={`flex px-4 pt-1 pb-2 grow h-full ${isOpen && 'blur-sm'}`}
+    >
       {children}
     </section>
   );
