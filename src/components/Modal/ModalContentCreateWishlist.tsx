@@ -25,7 +25,7 @@ export default function ModalContentCreate() {
   const { data: wishlistsData } = useGetWishlistsQuery(null);
 
   function onSubmit(data: FieldValues) {
-    const foundTitle = wishlistsData.find(
+    const foundTitle = wishlistsData?.find(
       (wishlist: { title: string }) => wishlist.title === data.wishlistTitle,
     );
     if (!foundTitle) {

@@ -17,7 +17,7 @@ export default function Wishlists() {
         <>Oh no, there was an error</>
       ) : isLoading ? (
         <>Loading...</>
-      ) : data.length ? (
+      ) : data?.length ? (
         <section className="grid grid-cols-2 items-start gap-y-3 gap-x-3">
           {data
             .slice()
