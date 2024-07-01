@@ -55,7 +55,7 @@ export default function FormMultiSelect(props: FormMultiSelectProps) {
                 label: item.title,
               }))}
               isMulti
-              placeholder="Select wishlist..."
+              placeholder="Select wishlist"
               isClearable
               value={value}
               isDisabled={isLoading}
@@ -67,7 +67,7 @@ export default function FormMultiSelect(props: FormMultiSelectProps) {
               unstyled
               classNames={{
                 control: () =>
-                  'rounded-t-lg rounded-b border-b-2 border-violet-700/70 bg-white/40 pr-1 pl-2 gap-1',
+                  'rounded-t-lg rounded-b border-b-2 border-violet-700/70 bg-white/40 pr-1 gap-1',
                 placeholder: () => 'text-sm text-slate-400',
                 menu: () =>
                   'bg-white/40 rounded-b-lg rounded-t backdrop-blur-sm',

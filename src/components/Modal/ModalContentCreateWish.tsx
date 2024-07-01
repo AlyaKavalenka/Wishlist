@@ -9,8 +9,11 @@ import useModal from '@/hooks/useModal';
 import { useCreateWishMutation } from '@/lib/api/endpointsWish';
 import { useEffect } from 'react';
 import Image from 'next/image';
-import { useGetWishlistsQuery } from '@/lib/api/endpointsWishlist';
 import FormMultiSelect from '../Form/FormMultiSelect';
+import FormHeader from '../Form/FormHeader';
+import FormFieldWrapper from '../Form/FormFieldWrapper';
+import BtnsUploadImages from '../Btns/BtnsUploadImages';
+import BtnsCancelNCreate from '../Btns/BtnsCancelNCreate';
 
 interface ModalContentCreateWishProps {}
 
@@ -18,8 +21,6 @@ export default function ModalContentCreateWish(
   props: ModalContentCreateWishProps,
 ) {
   const {} = props;
-
-  const { data, error, isLoading } = useGetWishlistsQuery(null);
 
   const methods = useForm();
   const { control, handleSubmit, getValues, register } = methods;
@@ -50,9 +51,6 @@ export default function ModalContentCreateWish(
   const { toggle } = useModal();
 
   const [createWish] = useCreateWishMutation();
-
-  const btnStyle =
-    'text-orange-900 hover:bg-orange-700/20 rounded py-1 px-2 text-sm';
 
   function onSubmit(data: FieldValues) {
     const { wishName, wishDescription, wishLinks, wishPhotos, wishlists } =
@@ -99,68 +97,69 @@ export default function ModalContentCreateWish(
   return (
     <FormProvider {...methods}>
       <form
-        className="flex flex-col gap-4 max-h-96 overflow-y-auto overscroll-none scroll-smooth scrollbar-thin scrollbar-track-orange-200 scrollbar-thumb-orange-400 p-2"
+        className="flex flex-col gap-4 max-h-[70vh] overflow-y-auto overscroll-none scroll-smooth scrollbar-thin scrollbar-track-indigo-200 scrollbar-thumb-indigo-400 p-2"
         onSubmit={handleSubmit(onSubmit)}
       >
-        {data?.length && <FormMultiSelect name="wishlists" control={control} />}
-
-        <FormInputText
-          name="wishName"
-          control={control}
-          label="Wish name"
-          required={false}
-        />
-        <FormInputText
-          name="wishDescription"
-          control={control}
-          label="Wish description*"
-          required={false}
-        />
-        {...linksFields.map((field, index) => (
-          <FormInputText
-            name={`wishLinks.${index}`}
-            control={control}
-            label="Wish link*"
-            key={field.id}
-            required={false}
-          />
-        ))}
-        <button
-          type="button"
-          className="text-sm rounded-md text-orange-200 hover:text-orange-100 bg-orange-500/60 hover:bg-orange-500 p-2"
-          onClick={() => appendLink('')}
-        >
-          Add a link to a photo or website
-        </button>
-        <section className="flex flex-wrap gap-2">
-          {...photosFields.map((filed, index) => (
-            <Image
-              src={getValues(`wishPhotos.${index}`)}
-              {...register(`wishPhotos.${index}`)}
-              width={70}
-              height={70}
-              unoptimized
-              key={filed.id}
-              alt={getValues(`wishPhotos.${index}`)}
-              className="rounded-md shadow"
-            />
-          ))}
+        <section className="flex gap-1 justify-between">
+          <FormHeader>Create wish</FormHeader>
+          <FormMultiSelect name="wishlists" control={control} />
         </section>
-        <div className="flex justify-end gap-1">
+
+        <section className="flex flex-col gap-3">
+          <FormFieldWrapper headerText="Name" isOptional={false}>
+            <FormInputText
+              name="wishName"
+              control={control}
+              required={false}
+              placeholder="Type wish name"
+            />
+          </FormFieldWrapper>
+
+          <FormFieldWrapper headerText="Description" isOptional={true}>
+            <FormInputText
+              name="wishDescription"
+              control={control}
+              required={false}
+              placeholder="Type wish description"
+            />
+          </FormFieldWrapper>
+
+          <FormFieldWrapper headerText="Links" isOptional={true}>
+            {...linksFields.map((field, index) => (
+              <FormInputText
+                name={`wishLinks.${index}`}
+                control={control}
+                key={field.id}
+                required={false}
+                placeholder="Past link to a photo or website"
+              />
+            ))}
+          </FormFieldWrapper>
+
           <button
             type="button"
-            className={`${btnStyle}`}
-            onClick={(e) => {
-              e.preventDefault();
-              toggle();
-            }}
+            className="rounded-lg py-2 px-3 flex items-start bg-violet-400/30 shadow-md shadow-violet-400/70 text-white font-semibold"
+            onClick={() => appendLink('')}
           >
-            Cancel
+            + Add link
           </button>
-          <button type="submit" className={`${btnStyle}`}>
-            Create
-          </button>
-        </div>
+          <BtnsUploadImages />
+          <section className="flex flex-wrap gap-2">
+            {...photosFields.map((filed, index) => (
+              <Image
+                src={getValues(`wishPhotos.${index}`)}
+                {...register(`wishPhotos.${index}`)}
+                width={70}
+                height={70}
+                unoptimized
+                key={filed.id}
+                alt={getValues(`wishPhotos.${index}`)}
+                className="rounded-md shadow"
+              />
+            ))}
+          </section>
+          <BtnsCancelNCreate errors={methods.formState.errors} />
+        </section>
       </form>
     </FormProvider>
   );

@@ -8,9 +8,11 @@ import {
 } from '@/lib/api/endpointsWishlist';
 import FormInputDate from '../Form/FormInputDate';
 import FormInputTime from '../Form/FormInputTime';
-import BtnCancel from '../Btns/BtnCancel';
-import BtnCreate from '../Btns/BtnCreate';
 import { useState } from 'react';
+import FormHeader from '../Form/FormHeader';
+import BtnsUploadImages from '../Btns/BtnsUploadImages';
+import BtnsCancelNCreate from '../Btns/BtnsCancelNCreate';
+import FormFieldWrapper from '../Form/FormFieldWrapper';
 
 export default function ModalContentCreate() {
   const {
@@ -64,14 +66,16 @@ export default function ModalContentCreate() {
 
   return (
     <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
-      <h3 className="text-slate-400 self-center">Create wish list</h3>
+      <FormHeader>Create wish list</FormHeader>
       <section className="flex flex-col gap-3">
-        <FormInputText
-          name="wishlistTitle"
-          control={control}
-          label="Title"
-          required="Title is required"
-        />
+        <FormFieldWrapper headerText="Title" isOptional={false}>
+          <FormInputText
+            name="wishlistTitle"
+            control={control}
+            placeholder="Type wishlist title"
+            required="Title is required"
+          />
+        </FormFieldWrapper>
         <section className="flex flex-col gap-1">
           <OptionalHeader headerText="Event date" />
           <div className="flex gap-2">
@@ -79,32 +83,8 @@ export default function ModalContentCreate() {
             <FormInputTime name="wishlistEventTime" control={control} />
           </div>
         </section>
-        <section className="flex flex-col gap-1">
-          <OptionalHeader headerText="Upload image" />
-          <div className="grid grid-cols-2 gap-[1px]">
-            <button
-              type="button"
-              className="bg-indigo-400/70 rounded-s-lg py-3 font-semibold text-white"
-            >
-              by link
-            </button>
-            <button
-              type="button"
-              className="bg-violet-400/70 rounded-e-lg py-3 font-semibold text-white"
-            >
-              from device
-            </button>
-          </div>
-        </section>
-        <div className="flex justify-end gap-1 pt-2">
-          <BtnCancel
-            handleClick={(e) => {
-              e.preventDefault();
-              toggle();
-            }}
-          />
-          <BtnCreate disabled={!!errors && !!Object.keys(errors).length} />
-        </div>
+        <BtnsUploadImages />
+        <BtnsCancelNCreate errors={errors} />
       </section>
     </form>
   );
