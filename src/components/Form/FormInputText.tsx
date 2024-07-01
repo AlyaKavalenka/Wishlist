@@ -25,7 +25,7 @@ export default function FormInputText(props: FormInputTextProps) {
             <input
               type="text"
               id={name}
-              className={`block py-2.5 px-2 w-full ${!error ? 'text-black' : 'text-red-600'} bg-white/30 border-0 border-b-2 ${!error ? 'border-white/80' : 'border-red-600'} appearance-none focus:outline-none focus:ring-0 focus:${!error ? 'border-orange-700' : 'border-red-600'} peer rounded-t-lg rounded-b-sm font-extralight`}
+              className={`block w-full px-2 py-2.5 ${!error ? 'text-black' : 'text-red-600'} border-0 border-b-2 bg-white/30 ${!error ? 'border-white/80' : 'border-red-600'} appearance-none focus:outline-none focus:ring-0 focus:${!error ? 'border-orange-700' : 'border-red-600'} peer rounded-b-sm rounded-t-lg font-extralight`}
               placeholder={placeholder}
               onChange={onChange}
               value={value}

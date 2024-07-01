@@ -9,11 +9,11 @@ export default function FormFieldWrapper(props: FormFieldWrapperProps) {
 
   const Header = (optionalHeaderProps: { headerText: string }) => (
     <div className="flex gap-1">
-      <h4 className="text-stone-500 font-medium">
+      <h4 className="font-medium text-stone-500">
         {optionalHeaderProps.headerText}
       </h4>
       {isOptional && (
-        <span className="text-stone-400 font-extralight">(optional)</span>
+        <span className="font-extralight text-stone-400">(optional)</span>
       )}
     </div>
   );

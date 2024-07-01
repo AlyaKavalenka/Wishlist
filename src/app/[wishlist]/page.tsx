@@ -32,9 +32,9 @@ export default function WishlistPage({
   const { data, error, isLoading } = useGetWishesByWishlistQuery(wishlistId);
 
   return (
-    <section className="flex relative flex-grow flex-col">
+    <section className="relative flex flex-grow flex-col">
       <BlockWrapper>
-        <section className="flex gap-1 items-center justify-between">
+        <section className="flex items-center justify-between gap-1">
           <ButtonNIcon
             src={arrowIcon}
             mode="return"

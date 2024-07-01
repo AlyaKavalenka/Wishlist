@@ -10,7 +10,7 @@ export default function BlockWrapper(props: BlockWrapperProps) {
 
   return (
     <section
-      className={`flex px-4 pt-1 pb-2 grow h-full ${isOpen && 'blur-sm'}`}
+      className={`flex h-full grow px-4 pb-2 pt-1 ${isOpen && 'blur-sm'}`}
     >
       {children}
     </section>

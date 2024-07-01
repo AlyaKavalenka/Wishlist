@@ -11,7 +11,7 @@ export default function BtnCancel(props: BtnCancelProps) {
   return (
     <button
       type="button"
-      className="bg-black/15 text-white px-3 py-2 rounded-lg font-semibold"
+      className="rounded-lg bg-black/15 px-3 py-2 font-semibold text-white"
       onClick={handleClick}
     >
       Cancel

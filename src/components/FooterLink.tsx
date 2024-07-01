@@ -16,7 +16,7 @@ export default function FooterLink(props: FooterLinkProps) {
     <div className="flex h-full flex-grow justify-center">
       <Link
         href={linkHref}
-        className={`flex justify-center items-center grow ${isActive && 'bg-gradient-to-b from-white to-indigo-200 rounded-b-xl'}`}
+        className={`flex grow items-center justify-center ${isActive && 'rounded-b-xl bg-gradient-to-b from-white to-indigo-200'}`}
       >
         <Image src={imgSrc} alt={alt} />
       </Link>

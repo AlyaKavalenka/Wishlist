@@ -97,10 +97,10 @@ export default function ModalContentCreateWish(
   return (
     <FormProvider {...methods}>
       <form
-        className="flex flex-col gap-4 max-h-[70vh] overflow-y-auto overscroll-none scroll-smooth scrollbar-thin scrollbar-track-indigo-200 scrollbar-thumb-indigo-400 p-2"
+        className="flex max-h-[70vh] flex-col gap-4 overflow-y-auto overscroll-none scroll-smooth p-2 scrollbar-thin scrollbar-track-indigo-200 scrollbar-thumb-indigo-400"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <section className="flex gap-1 justify-between">
+        <section className="flex justify-between gap-1">
           <FormHeader>Create wish</FormHeader>
           <FormMultiSelect name="wishlists" control={control} />
         </section>
@@ -138,7 +138,7 @@ export default function ModalContentCreateWish(
 
           <button
             type="button"
-            className="rounded-lg py-2 px-3 flex items-start bg-violet-400/30 shadow-md shadow-violet-400/70 text-white font-semibold"
+            className="flex items-start rounded-lg bg-violet-400/30 px-3 py-2 font-semibold text-white shadow-md shadow-violet-400/70"
             onClick={() => appendLink('')}
           >
             + Add link

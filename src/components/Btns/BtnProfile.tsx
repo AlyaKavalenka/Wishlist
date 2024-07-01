@@ -3,11 +3,11 @@ import defaultProfileImg from '../../../public/images/img/default-profile-img.pn
 
 export default function BtnProfile() {
   return (
-    <button type="button" className="flex w-full h-full py-1">
+    <button type="button" className="flex h-full w-full py-1">
       <Image
         src={defaultProfileImg}
         alt="profile"
-        className="w-full h-full object-contain"
+        className="h-full w-full object-contain"
       />
     </button>
   );

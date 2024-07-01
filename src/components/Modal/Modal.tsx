@@ -7,14 +7,14 @@ export default function Modal(props: ModalProps) {
     <>
       {isOpen && (
         <section
-          className="absolute flex w-full justify-center h-full items-start p-7 bg-white/30"
+          className="absolute flex h-full w-full items-start justify-center bg-white/30 p-7"
           onClick={toggle}
           onKeyDown={() => {}}
           role="textbox"
           tabIndex={-1}
         >
           <section
-            className="bg-gradient-to-b from-white to-indigo-200 rounded-b-xl px-4 py-3 shadow-lg shadow-indigo-200 fixed rounded-lg w-5/6"
+            className="fixed w-5/6 rounded-lg rounded-b-xl bg-gradient-to-b from-white to-indigo-200 px-4 py-3 shadow-lg shadow-indigo-200"
             onClick={(e) => e.stopPropagation()}
             role="textbox"
             tabIndex={-1}

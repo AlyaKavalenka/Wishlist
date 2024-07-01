@@ -16,7 +16,7 @@ export default function Home() {
   const { toggle } = useModal();
 
   return (
-    <main className="flex items-start relative flex-grow">
+    <main className="relative flex flex-grow items-start">
       <BlockWrapper>
         <Wishlists />
       </BlockWrapper>

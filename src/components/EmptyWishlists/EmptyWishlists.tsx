@@ -3,7 +3,7 @@ import EmptyImg from '../../../public/images/png/empty-image.png';
 
 export default function EmptyWishlists() {
   return (
-    <section className="flex flex-col justify-between grow items-center">
+    <section className="flex grow flex-col items-center justify-between">
       <article className="flex flex-col items-center gap-2">
         <div>
           <Image src={EmptyImg} alt="no wishlist" />
@@ -12,7 +12,7 @@ export default function EmptyWishlists() {
           You haven&rsquo;t created wish lists yet
         </span>
       </article>
-      <span className="text-indigo-500 font-extralight animate-bounce mb-4">
+      <span className="mb-4 animate-bounce font-extralight text-indigo-500">
         Create wish or wish list 👉
       </span>
     </section>

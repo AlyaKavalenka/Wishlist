@@ -16,11 +16,11 @@ export default function WishItem(props: WishItemProps) {
   return (
     <section
       key={wish.id}
-      className="flex flex-col gap-2 my-2 last:border-b-0 bg-orange-950/30 rounded-md p-4 group"
+      className="group my-2 flex flex-col gap-2 rounded-md bg-orange-950/30 p-4 last:border-b-0"
     >
-      <article className="flex gap-1 justify-between items-center">
+      <article className="flex items-center justify-between gap-1">
         <span className="text-lg">{wish.name}</span>
-        <div className="opacity-0 group-hover:opacity-100 transition-opacity delay-300 ease-in-out">
+        <div className="opacity-0 transition-opacity delay-300 ease-in-out group-hover:opacity-100">
           <BtnNIcon
             src={editIcon}
             mode="edit_wish"
@@ -35,10 +35,7 @@ export default function WishItem(props: WishItemProps) {
           />
         </div>
       </article>
-      <article
-        className="text-sm text-orange-50/80 flex
-      flex-col gap-1"
-      >
+      <article className="flex flex-col gap-1 text-sm text-orange-50/80">
         <span>{wish.description}</span>
         <section className="flex flex-col gap-0.5">
           {wish.links.map((link) => (
@@ -61,7 +58,7 @@ export default function WishItem(props: WishItemProps) {
                 width={photoSmallSize}
                 height={photoSmallSize}
                 unoptimized
-                className="h-full object-cover rounded-md"
+                className="h-full rounded-md object-cover"
               />
             </button>
           ))}

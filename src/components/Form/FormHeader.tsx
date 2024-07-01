@@ -3,5 +3,5 @@ export default function FormHeader({
 }: {
   children: React.ReactNode;
 }) {
-  return <h3 className="text-slate-400 self-center">{children}</h3>;
+  return <h3 className="self-center text-slate-400">{children}</h3>;
 }

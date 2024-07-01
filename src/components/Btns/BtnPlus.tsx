@@ -21,7 +21,7 @@ export default function BtnPlus() {
 
   return (
     <section
-      className={`fixed pb-1 right-1 bottom-16 flex flex-col gap-3 ${isOpen && 'blur-sm'}`}
+      className={`fixed bottom-16 right-1 flex flex-col gap-3 pb-1 ${isOpen && 'blur-sm'}`}
     >
       <button
         type="button"
@@ -47,7 +47,7 @@ export default function BtnPlus() {
           Wish
         </button>
         <button
-          className={`bg-indigo-400/40 rounded-full shadow-md p-3 transition-transform ${
+          className={`rounded-full bg-indigo-400/40 p-3 shadow-md transition-transform ${
             isActiveClick && '-rotate-45'
           }`}
           onClick={handleClick}

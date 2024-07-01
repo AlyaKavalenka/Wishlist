@@ -20,8 +20,7 @@ export default function ButtonNIcon(props: ButtonNIconProps) {
   // TODO: by hover on button add tip
   return (
     <button
-      className="opacity-40 hover:bg-orange-900/35 hover:opacity-100 p-1 rounded-md cursor-pointer 
-      disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:opacity-10"
+      className="cursor-pointer rounded-md p-1 opacity-40 hover:bg-orange-900/35 hover:opacity-100 disabled:cursor-not-allowed disabled:opacity-10 disabled:hover:bg-transparent"
       onClick={handleClick}
       disabled={disabled}
     >

@@ -9,8 +9,8 @@ export default function Wishlists() {
   const { data, error, isLoading } = useGetWishlistsQuery(null);
 
   return (
-    <main className="flex flex-col gap-2 grow">
-      <div className="flex justify-center items-center tracking-wide">
+    <main className="flex grow flex-col gap-2">
+      <div className="flex items-center justify-center tracking-wide">
         <h2>My wish lists</h2>
       </div>
       {error ? (
@@ -18,7 +18,7 @@ export default function Wishlists() {
       ) : isLoading ? (
         <>Loading...</>
       ) : data?.length ? (
-        <section className="grid grid-cols-2 items-start gap-y-3 gap-x-3">
+        <section className="grid grid-cols-2 items-start gap-x-3 gap-y-3">
           {data
             .slice()
             .sort((a: WishlistResponse, b: WishlistResponse) => {

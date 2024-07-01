@@ -30,7 +30,7 @@ export default function WishlistItem(props: WishlistItemProps) {
   };
 
   return (
-    <section className="rounded-md flex flex-col gap-1 border border-black/15 shadow-md h-full max-h-44 w-full">
+    <section className="flex h-full max-h-44 w-full flex-col gap-1 rounded-md border border-black/15 shadow-md">
       <Link
         href={{
           pathname: `/${title}`,
@@ -42,17 +42,17 @@ export default function WishlistItem(props: WishlistItemProps) {
           <Image
             src={wishlist_img || defaultWishlistPhoto}
             alt="wishlist"
-            className="object-contain rounded-t-md"
+            className="rounded-t-md object-contain"
             priority={false}
             placeholder="blur"
           />
         </div>
-        <div className="flex flex-col items-center grow pb-1">
+        <div className="flex grow flex-col items-center pb-1">
           <div className="grow">
             <span>{title}</span>
           </div>
-          <div className="flex justify-end items-end">
-            <span className="italic text-xs opacity-60">
+          <div className="flex items-end justify-end">
+            <span className="text-xs italic opacity-60">
               {event_date ? date(event_date) : ''}
             </span>
           </div>
