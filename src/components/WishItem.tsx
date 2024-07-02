@@ -1,8 +1,5 @@
 import { Wish } from '@/types/types';
 import Image from 'next/image';
-import crossIcon from '../../public/images/icons/cross-icon.svg';
-import editIcon from '../../public/images/icons/edit-icon.svg';
-import BtnNIcon from './Btns/BtnNIcon';
 
 interface WishItemProps {
   wish: Wish;
@@ -11,59 +8,47 @@ interface WishItemProps {
 export default function WishItem(props: WishItemProps) {
   const { wish } = props;
 
-  const photoSmallSize = 60;
-
   return (
-    <section
-      key={wish.id}
-      className="group my-2 flex flex-col gap-2 rounded-md bg-orange-950/30 p-4 last:border-b-0"
-    >
-      <article className="flex items-center justify-between gap-1">
-        <span className="text-lg">{wish.name}</span>
-        <div className="opacity-0 transition-opacity delay-300 ease-in-out group-hover:opacity-100">
-          <BtnNIcon
-            src={editIcon}
-            mode="edit_wish"
-            handleClick={() => {}}
-            disabled
-          />
-          <BtnNIcon
-            src={crossIcon}
-            mode="delete_wish"
-            handleClick={() => {}}
-            disabled
-          />
-        </div>
-      </article>
-      <article className="flex flex-col gap-1 text-sm text-orange-50/80">
-        <span>{wish.description}</span>
-        <section className="flex flex-col gap-0.5">
+    <section className="flex flex-col gap-2 rounded-xl bg-gradient-to-b from-white to-indigo-200 p-3 shadow-lg shadow-indigo-200">
+      <section className="flex gap-2">
+        {!!wish.photos.length && (
+          <article className="flex h-full max-w-[30%] flex-wrap">
+            {wish.photos.map((photo) => (
+              <button key={photo} className="flex-[50%]">
+                <Image
+                  src={photo}
+                  alt="wish small photo"
+                  width={0}
+                  height={0}
+                  unoptimized
+                  sizes="auto"
+                  className="inline-block h-full w-full rounded object-cover align-middle"
+                />
+              </button>
+            ))}
+          </article>
+        )}
+        <article className="flex flex-col gap-1">
+          <span>{wish.name}</span>
+          <span className="text-sm font-extralight text-stone-700">
+            {wish.description}
+          </span>
+        </article>
+      </section>
+      {!!wish.links.length && (
+        <section className="flex flex-col gap-1">
           {wish.links.map((link) => (
             <a
               href={link}
               target="_blank"
-              className="text-sm underline decoration-solid"
+              className="line-clamp-1 break-all text-sm text-blue-500 underline decoration-solid"
               key={link}
             >
               {link}
             </a>
           ))}
         </section>
-        <article className="flex gap-2 py-2">
-          {wish.photos.map((photo) => (
-            <button key={photo}>
-              <Image
-                src={photo}
-                alt="wish small photo"
-                width={photoSmallSize}
-                height={photoSmallSize}
-                unoptimized
-                className="h-full rounded-md object-cover"
-              />
-            </button>
-          ))}
-        </article>
-      </article>
+      )}
     </section>
   );
 }

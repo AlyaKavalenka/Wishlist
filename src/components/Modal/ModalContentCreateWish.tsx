@@ -56,19 +56,15 @@ export default function ModalContentCreateWish(
     const { wishName, wishDescription, wishLinks, wishPhotos, wishlists } =
       data;
 
-    // if (wishlist_id) {
-    //   createWish({
-    //     wishlist_id,
-    //     name: wishName,
-    //     description: wishDescription,
-    //     links: wishLinks,
-    //     photos: wishPhotos,
-    //   }).then(() => toggle());
-    // } else {
-    //   throw new Error(
-    //     'Error: something went wrong with wishlist_id:' + wishlist_id,
-    //   );
-    // }
+    createWish({
+      name: wishName,
+      description: wishDescription,
+      links: wishLinks.filter((link: string) => !!link),
+      photos: wishPhotos,
+      wishlists_id: wishlists.map(
+        (wishlist: { value: string; label: string }) => wishlist.value,
+      ),
+    }).then(() => toggle());
   }
 
   useEffect(() => {

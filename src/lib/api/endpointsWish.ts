@@ -4,7 +4,7 @@ import { api } from './api';
 const endpointsWish = api.injectEndpoints({
   endpoints: (builder) => ({
     getWishesByWishlist: builder.query({
-      query: (wishlistId) => `wish?wishlist_id=${wishlistId}`,
+      query: (wishlistId) => `wish/wishlist/${wishlistId}`,
       providesTags: (res) =>
         res
           ? [
