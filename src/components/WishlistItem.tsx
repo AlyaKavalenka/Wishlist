@@ -29,12 +29,18 @@ export default function WishlistItem(props: WishlistItemProps) {
     return newDate.toLocaleDateString('en', options);
   };
 
+  const query: { id: string; img?: string } = {
+    id: `${wishlist_id}`,
+  };
+
+  if (wishlist_img) query.img = wishlist_img;
+
   return (
     <section className="flex h-full max-h-44 w-full flex-col gap-1 rounded-md border border-black/15 shadow-md">
       <Link
         href={{
           pathname: `/${title}`,
-          query: { id: `${wishlist_id}` },
+          query,
         }}
         className="flex flex-col gap-1 rounded-t-md"
       >
